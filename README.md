@@ -77,3 +77,5 @@ License
 -------
 
 MIT
+
+[https://digitastuces.com/](https://digitastuces.com/)
