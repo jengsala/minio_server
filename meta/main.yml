@@ -1,33 +1,22 @@
----
 galaxy_info:
   author: jengsala
   role_name: minio_server
   description: Install minio server for linux
   company: DIGITASTUCES
-
   # issue_tracker_url: http://digitastuces.com/issue/tracker
-
-  license:
-  - MIT
-
-  min_ansible_version: 2.9
-
+  license: MIT
+  min_ansible_version: '2.9'
   # If this a Container Enabled role, provide the minimum Ansible Container version.
   # min_ansible_container_version:
-
   platforms:
-  - name: Ubuntu
-    versions:
-    - all
-  - name: Debian
-    versions:
-    - all
-
-
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
   galaxy_tags:
-  - storage
-  - s3
-  - objectstorage
-
-
+    - storage
+    - s3
+    - objectstorage
 dependencies: []
