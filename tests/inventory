@@ -1,0 +1,1 @@
+localhost   ansible_host=vmubuntu2     ansible_user=vagrant    ansible_port=22

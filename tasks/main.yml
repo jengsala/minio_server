@@ -1,0 +1,11 @@
+---
+# tasks file for ansible-role-minio-example
+- name: Requirement & Prequisites to install MinIO
+  include_tasks: prerequisites.yaml
+
+- name: Install MinIO
+  block: 
+    - name: Install server package
+      include_tasks: install-minio-server.yaml
+    - name: Install client package
+      include_tasks: install-minio-client.yaml

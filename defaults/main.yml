@@ -1,0 +1,21 @@
+# defaults file for ansible-role-minio-example
+minio_access_key: "ACCES_KEY"
+minio_secret_key: "SECRET_KEY"
+minio_username: "minio-user"
+minio_password: "blable_encrypted"
+minio_volume_bind: "/home/minio-user"
+minio_ports_api: "9000"
+minio_ports_console: "9664"
+minio_browser_enabled: "on"
+minio_server_url: "http://127.0.0.1:9000"
+minio_secure_ssl_redirect_enabled: "off"
+minio_ldap_bind_password: "LDAP_PASSWORD"
+minio_ldap_server_address: "openldap.digitastuces.com:636"
+minio_ldap_bind_dn: "cn=admin,dc=digitastuces,dc=com"
+minio_ldap_user_search_base_dn: "dc=digitastuces,dc=com"
+minio_ldap_server_starttls: on
+minio_ldap_tls_skip_verify: off
+minio_ldap_server_insecure: on
+minio_ldap_user_dn_search_filter: "(uid=%s)"
+minio_ldap_group_search_base_dn: "cn=nexus-admins,ou=nexus,ou=applications,dc=digitastuces,dc=com"
+minio_ldap_group_search_filter: "(&(objectclass=groupOfNames)(member=%d))"

@@ -1,0 +1,37 @@
+- name: Create Minio User group minio
+  group:
+    name: "{{ minio_username }}"
+    state: present
+
+- name: Add the user minio
+  user:
+    name: "{{ minio_username }}"
+    password: "{{ minio_password }}"
+    comment: MinIO administration user
+    groups:
+      - "{{ minio_username }}"
+      - sudo
+    state: present
+    shell: /bin/bash
+    system: true
+    createhome: true
+    home: '{{ minio_volume_bind }}'
+
+- name: Make sudo without password for {{ minio_username }} user
+  copy:
+    dest: /etc/sudoers.d/80-ansible-sudo-user
+    content: "{{ minio_username }} ALL=(ALL) NOPASSWD:ALL"
+    mode: 0440
+
+# - name: Add the user minio
+#   ansible.builtin.user:
+#     name: "{{ minio_username }}"
+#     group: "{{ minio_username }}"
+#     shell: "/usr/sbin/nologin"
+#     comment: MinIO administration user
+
+- name: Create a directory if it does not exist for MinIO volume mount
+  ansible.builtin.file:
+    path: "{{ minio_volume_bind }}"
+    state: directory
+    mode: '0777'
